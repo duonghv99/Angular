@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="alert alert-success" role="alert"
+            style="background-color: #18BA88; color: #F7F8FA; margin-top: 20px">
+            Lưu điểm danh thành công
+        </div>
+        <div id="section1" class="container-fluid" style="padding-top:25px;padding-bottom:25px; font-size: 23px; background: #F7F8FA; color: #F33983; font-weight: bold; font-family: sans-serif; 
+            border-left: 5px solid #E2E5EE; padding-left: 30px; padding-right: 30px">
+            <p>Giảng viên điểm danh bất kì vào 15 phút từ khi vào ca học. Tại thời điểm điểm danh mà sinh viên không có
+                mặt tại lớp xem như vắng mặt.
+            </p>
+            <p>Sau đó giảng viên có quyền điểm danh từ có mặt sang vắng mặt các trường hợp vi phạm nội quy lớp học: mất
+                trật tự, ra ngoài không lí do,...
+            </p>
+        </div>
+        <input class="btn btn-primary" type="button" style="margin-top: 30px; margin-bottom: 30px; float: right"
+            value="Đồng bộ điểm danh với Biface">
+        <table class="table table-striped">
+            <tr>
+                <td>#</td>
+                <td>Tên lớp</td>
+                <td>Mã sinh viên</td>
+                <td>Tên sinh viên</td>
+                <td>Ảnh</td>
+                <td>Trạng thái</td>
+                <td>Chú thích</td>
+            </tr>
+
+            <tr>
+                <th style="padding-top: 45px">1</th>
+                <td style="padding-top: 45px">IT17311</td>
+                <td style="padding-top: 45px">PH23002</td>
+                <td style="padding-top: 45px">Phạm Thế Anh</td>
+                <td><img src="img/the4.jpg" alt="" height="100px"></td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                        style="border: 1px solid #E8E8EA; height: 43px; margin-top: 27px; clear: both;">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                        <label class="btn btn-outline-success" for="btnradio1"
+                            style="border: none; width: 130px; color: #FFFFFF">Có mặt</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                        <label class="btn btn-outline-danger" for="btnradio2"
+                            style="border: none; width: 130px; color: #FFFFFF">Vắng mặt</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="col-sm-11">
+                        <label for="exampleDataList" class="form-label"></label>
+                        <input class="form-control" list="datalistOptions" id="exampleDataList"
+                            style="height: 40px; margin-top: 5px">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

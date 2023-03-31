@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="libs/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <div ng-controller="controller">
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <th>Họ Tên</th>
+                <th>Ngày Sinh</th>
+                <th>Hình Ảnh</th>
+                <th>Giới Tính</th>
+                <th>Điểm TB</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ infor[0].fullname }}</td>
+                    <td>{{ infor[0].birthday }}</td>
+                    <td><img src="../img/the4.jpg" alt="" width="80px" ; height="100px"></td>
+                    <td>{{ infor[0].gender }}</td>
+                    <td>{{ infor[0].mark }}</td>
+                </tr>
+
+                <tr>
+                    <td>{{ infor[1].fullname }}</td>
+                    <td>{{ infor[1].birthday }}</td>
+                    <td><img src="../img/the4.jpg" alt="" width="80px" ; height="100px"></td>
+                    <td>{{ infor[1].gender }}</td>
+                    <td>{{ infor[1].mark }}</td>
+                </tr>
+
+                <tr>
+                    <td>{{ infor[2].fullname }}</td>
+                    <td>{{ infor[2].birthday }}</td>
+                    <td><img src="../img/the4.jpg" alt="" width="80px" ; height="100px"></td>
+                    <td>{{ infor[2].gender }}</td>
+                    <td>{{ infor[2].mark }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+<script>
+    var app = angular.module("myapp", []);
+    app.controller("controller", function ($scope) {
+        $scope.infor = [{
+            fullname: "Nguyễn Văn A",
+            birthday: "1998",
+            photo: "the4.jpg",
+            gender: "Nam",
+            mark: 8.5,
+        },
+        {
+            fullname: "Nguyễn Văn B",
+            birthday: "1999",
+            photo: "the4.jpg",
+            gender: "Nam",
+            mark: 7.5,
+        },
+        {
+            fullname: "Lê Văn Mạnh",
+            birthday: "1999",
+            photo: "the4.jpg",
+            gender: "Nam",
+            mark: 8.5,
+        }
+        ]
+    });
+</script>
+
+</html>

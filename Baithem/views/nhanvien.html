@@ -1,0 +1,33 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <td>Họ Tên Nhân Viên</td>
+            <td><input type="text" ng-model="name" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Giới Tính</td>
+            <td>
+                <select class="form-select" ng-model="gender">
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Cấp Bậc</td>
+            <td>
+                <select name="" id="" ng-model="capbac" ng-options="x.capbac for x in capbacs" class="form-select">
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Số Ngày</td>
+            <td><input type="number" ng-model="date" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Thông Tin Nhân Viên</td>
+            <td><input class="form-control" value="{{ thongbao }}" disabled></input></td>
+        </tr>
+    </table>
+    <button ng-click="onSubmitFormNhanVien()" class="btn btn-success">Lưu Thông Tin</button>
+</div>

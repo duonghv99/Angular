@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="form-group">
+        <label for="">Tên Sản Phẩm</label>
+        <input type="text" ng-model="inputValue.sp" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="">Số Lượng</label>
+        <input type="text" ng-model="inputValue.sl" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="">Đơn Giá</label>
+        <input type="text" ng-model="inputValue.don" class="form-control">
+
+    </div>
+
+    <div class="form-group">
+        <label for="">Trạng Thái</label>
+        <select ng-model="trangthai" class="form-control">
+            <option value="1">Kích Hoạt</option>
+            <option value="2">Không Kích Hoạt</option>
+        </select>
+    </div>
+    <button ng-click="onSubmitForm()" class="btn btn-success">Save</button>
+
+    <table border="1" style="width: 100%; margin-top: 30px; text-align: center;">
+        <tr>
+            <td>ID</td>
+            <td>Tên Sản Phẩm</td>
+            <td>Số Lượng</td>
+            <td>Đơn Giá</td>
+            <td>Trạng Thái</td>
+            <td>Tổng Tiền</td>
+        </tr>
+
+        <tr ng-repeat="ds in danhsach">
+            <td>{{ds.id}}</td>
+            <td>{{ds.sp}}</td>
+            <td>{{ds.sl}}</td>
+            <td>{{ds.don}}</td>
+            <td>{{ds.trangthai}}</td>
+            <td >
+                <button ng-click="onEdit(ds.id)" class="btn btn-primary">Sửa</button>
+                <button ng-click="onDelete(ds.id)" class="btn btn-danger">Xóa</button>
+            </td>
+        </tr>
+    </table>
+</div>

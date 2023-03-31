@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-route.min.js"></script>
+    <script src="controllers/BaiThemController.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table{
+            margin-top: 20px;
+        }
+        
+        input,select,button {
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 1.5px 1.5px 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div ng-app="app-route">
+        <nav class="navbar navbar-expand-lg" style="background-color: #5ECAEE">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#!/nhanvien/staff" class="nav-link active">Nhân Viên</a></li>
+                        <li class="nav-item"><a href="#!/canbo/office" class="nav-link active">Cán Bộ</a></li>
+                        <li class="nav-item"><a href="#!/quanli/leader" class="nav-link active">Quản Lí</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <!-- Định nghĩa mà nội dung sẽ render ra -->
+            <div ng-view>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+<script>
+    angular.module('app-route', ['ngRoute']).config(function ($routeProvider) {
+        $routeProvider.when('/nhanvien/:staff', { // định nghĩa tên route là nhanvien
+            templateUrl: 'views/nhanvien.html',
+            controller: BaiThemController
+        }).when('/canbo/:staff', { // định nghĩa tên route là canbo
+            templateUrl: 'views/canbo.html',
+            controller: BaiThemController
+        }).when('/quanli/:leader', { // định nghĩa tên route là quanli
+            templateUrl: 'views/quanli.html',
+            controller: BaiThemController
+        })
+    });
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+</html>

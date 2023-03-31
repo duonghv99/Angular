@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Nhúng thư viện angular js vào -->
+    <script src="libs/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <!-- <div ng-controller="demoController">
+        <h1> {{ welcome }}</h1> 
+    </div> -->
+    <div ng-controller="inforController">
+        <table class="table table-hover">
+            <thead>
+                <th>Tên</th>
+                <th>Tuổi</th>
+                <th>Số ĐT</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ info[0].name }}</td>
+                    <td>{{ info[0].age }}</td>
+                    <td>{{ info[0].phone }}</td>
+                </tr>
+                <tr>
+                    <td>{{ info[1].name }}</td>
+                    <td>{{ info[1].age }}</td>
+                    <td>{{ info[1].phone }}</td>
+                </tr>
+                <tr>
+                    <td>{{ info[2].name }}</td>
+                    <td>{{ info[2].age }}</td>
+                    <td>{{ info[2].phone }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h1>{{ welcome }}</h1>
+        <h1 ng-bind="welcome"></h1>
+        <input ng-model="test">
+        <h2>{{ thongbao }}</h2>
+        <select name="" id="" ng-model="doibong">
+            <option value="1">Mu</option>
+            <option value="2">Mc</option>
+            <option value="3">Arsenal</option>
+        </select>
+        Nam
+        <input ng-model="gioitinh" type="radio" value="1">
+        Nữ
+        <input ng-model="gioitinh" type="radio" value="2">
+        Khác
+        <input ng-model="gioitinh" type="radio" value="3">
+
+        <button ng-click="say()">Hihi</button>
+        <h1 ng-mousemove="myMouse()">Đưa chuột vào</h1>
+        {{ count }}
+    </div>
+</body>
+<script src="app.js"></script>
+<script>
+    // function myFunc($scope) {
+    //     // luôn luôn có tham số $scope để render dữ liệu
+    //     $scope.welcome = "Hello World"; // Đằng sau $scope. là biến mình khởi tạo để render dữ liệu ra view
+    // }
+    // // Khai báo angular js cùng với vùng mình sử dụng
+    // // Có thể có nhiều vùng controller
+    // var app = angular.module("myapp", []);
+    // // map hàm myFunc với vùng demoController để render dữ liệu ra
+    // app.controller("demoController", myFunc);
+
+
+    // function myInfor($scope) {
+    //     $scope.name = "Văn Dương";
+    //     $scope.age = "20";
+    //     $scope.phone = "0983390126";
+    // }
+    // app.controller("inforController", myInfor);
+
+    // // Viết tắt
+    // app.controller("inforController", function ($scope) {
+    //     // $scope.name = "Văn Dương";
+    //     // $scope.age = "20";
+    //     // $scope.phone = "0983390126";
+    //     $scope.info = [{
+    //         name: "Nguyễn Văn A",
+    //         age: 18,
+    //         phone: "09834434342",
+    //     },
+    //     {
+    //         name: "Nguyễn Văn B",
+    //         age: 19,
+    //         phone: "08384834834",
+    //     },
+    //     {
+    //         name: "Lê Văn Mạnh",
+    //         age: 20,
+    //         phone: "08384834834",
+    //     }
+    //     ]
+    // });
+</script>
+
+</html>
