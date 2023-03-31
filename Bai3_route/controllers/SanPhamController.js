@@ -39,6 +39,12 @@ window.SanPhamController = function ($scope, $routeParams) {
             flag = true;
         } 
 
+        if (!$scope.inputValue || !$scope.inputValue.don) {
+            $scope.kiemTraDuLieu.don = true; // có lỗi là true
+            flag = true;
+        }
+
+        // Trạng thái
         for(let i = 0; i < $scope.danhsach.length; i++){
             $scope.thongbao = $scope.trangthai;
         }
@@ -59,6 +65,8 @@ window.SanPhamController = function ($scope, $routeParams) {
                 return;
             }
 
+
+            // Thêm sản phẩm
             let ds = $scope.danhsach;
             // fake id tăng tự động
             let newId = ds.length > 0 ? ds[ds.length - 1].id + 1 : 1;
