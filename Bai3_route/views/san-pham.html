@@ -18,8 +18,9 @@
     <div class="form-group">
         <label for="">Trạng Thái</label>
         <select ng-model="trangthai" class="form-control">
-            <option value="1">Kích Hoạt</option>
-            <option value="2">Không Kích Hoạt</option>
+            <option value="">Mời chọn</option>
+            <option value="Kích hoạt">Kích hoạt</option>
+            <option value="Chưa kích hoạt">Chưa kích hoạt</option>
         </select>
     </div>
     <button ng-click="onSubmitForm()" class="btn btn-success">Save</button>
@@ -32,6 +33,7 @@
             <td>Đơn Giá</td>
             <td>Trạng Thái</td>
             <td>Tổng Tiền</td>
+            <td>Thao Tác</td>
         </tr>
 
         <tr ng-repeat="ds in danhsach">
@@ -39,11 +41,15 @@
             <td>{{ds.sp}}</td>
             <td>{{ds.sl}}</td>
             <td>{{ds.don}}</td>
-            <td>{{ds.trangthai}}</td>
+            <td>{{ thongbao }}</td>
+            <td>{{ds.sl * ds.don}}</td>
             <td >
-                <button ng-click="onEdit(ds.id)" class="btn btn-primary">Sửa</button>
+                <button ng-click="onEdit(ds.id)" class="btn btn-info">Sửa</button>
                 <button ng-click="onDelete(ds.id)" class="btn btn-danger">Xóa</button>
             </td>
+        </tr>
+        <tr>
+            <td colspan="6" style="font-weight: bold;"><span>Tổng: {{total()}}</span></td>
         </tr>
     </table>
 </div>

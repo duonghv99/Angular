@@ -9,11 +9,11 @@ window.SanPhamController = function ($scope, $routeParams) {
     }
 
     $scope.danhsach = [
-        { id: 1, sp: "Táo", sl: 2, don: 3000},
-        { id: 2, sp: "Lê", sl: 5, don: 5000},
-        { id: 3, sp: "Quất", sl: 3, don: 6000},
-        { id: 4, sp: "Đào", sl: 4, don: 8000},
-        { id: 5, sp: "Ổi", sl: 7, don: 2000},
+        { id: 1, sp: "Táo", sl: 2, don: 3000 },
+        { id: 2, sp: "Lê", sl: 5, don: 5000 },
+        { id: 3, sp: "Quất", sl: 3, don: 6000 },
+        { id: 4, sp: "Đào", sl: 4, don: 8000 },
+        { id: 5, sp: "Ổi", sl: 7, don: 2000 },
     ]
 
     $scope.onClose = function () {
@@ -37,15 +37,19 @@ window.SanPhamController = function ($scope, $routeParams) {
         if (!$scope.inputValue || !$scope.inputValue.sl) {
             $scope.kiemTraDuLieu.sl = true; // có lỗi là true
             flag = true;
-        }
+        } 
 
+        for(let i = 0; i < $scope.danhsach.length; i++){
+            $scope.thongbao = $scope.trangthai;
+        }
+        
         if (!flag) {
             // Xử lý sửa
             let editId = $scope.editId;
             // Kiểm tra nếu tồn tại editId thì sửa
-            if(editId){
-                for(let i = 0; i < $scope.danhsach.length; i++){
-                    if($scope.danhsach[i].id == editId){
+            if (editId) {
+                for (let i = 0; i < $scope.danhsach.length; i++) {
+                    if ($scope.danhsach[i].id == editId) {
                         $scope.danhsach[i].sp = $scope.inputValue.sp;
                         $scope.danhsach[i].sl = $scope.inputValue.sl;
                         $scope.danhsach[i].don = $scope.inputValue.don;
@@ -96,13 +100,22 @@ window.SanPhamController = function ($scope, $routeParams) {
         }
     }
 
-    $scope.onDelete = function(deleteId){
+    $scope.onDelete = function (deleteId) {
         let confirm = window.confirm("Bạn có muốn xóa không ?");
-        if(confirm){
+        if (confirm) {
             // Loại bỏ #deleteId thì Xóa
-            $scope.danhsach = $scope.danhsach.filter(function(item){
+            $scope.danhsach = $scope.danhsach.filter(function (item) {
                 return item.id !== deleteId;
             })
         }
+    }
+
+    $scope.total = function () {
+        let total = 0;
+        for (let i = 0; i < $scope.danhsach.length; i++) {
+            let product = $scope.danhsach[i];
+            total += (product.sl * product.don);
+        }
+        return total;
     }
 }
