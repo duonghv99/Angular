@@ -41,11 +41,17 @@ window.GioiThieuController = function ($scope, $routeParams, $http) {
         if (!$scope.inputValue || !$scope.inputValue.ten) {
             $scope.kiemTraDuLieu.ten = true; // có lỗi là true
             flag = true;
+        }else{
+            $scope.kiemTraDuLieu.ten = false;
+            flag = false;
         }
 
         if (!$scope.inputValue || !$scope.inputValue.tuoi) {
             $scope.kiemTraDuLieu.tuoi = true; // có lỗi là true
             flag = true;
+        }else{
+            $scope.kiemTraDuLieu.tuoi = false;
+            flag = false;
         }
 
         if (!flag) {
