@@ -12,6 +12,7 @@
     <script src="controllers/TrangChuController.js"></script>
     <script src="controllers/GioiThieuController.js"></script>
     <script src="controllers/SanPhamController.js"></script>
+    <script src="controllers/NhanVienController.js"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -24,6 +25,7 @@
                 <li><a href="#!/trang-chu">Trang chủ</a></li>
                 <li><a href="#!/gioi-thieu/haha">Giới thiệu</a></li>
                 <li><a href="#!/san-pham">Sản Phẩm</a></li>
+                <li><a href="#!/nhan-vien">Nhân Viên</a></li>
             </ul>
         </nav>
         <main>
@@ -46,6 +48,9 @@
         }).when('/san-pham', { // định nghĩa tên route là trang chủ
             templateUrl: 'views/san-pham.html', // đường dẫn đến view
             controller: SanPhamController
+        }).when('/nhan-vien', { // định nghĩa tên route là trang chủ
+            templateUrl: 'views/nhan-vien.html', // đường dẫn đến view
+            controller: NhanVienController
         })
     });
 

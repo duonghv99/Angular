@@ -5,7 +5,8 @@ window.SanPhamController = function ($scope, $routeParams) {
     $scope.kiemTraDuLieu = {
         sp: false,
         sl: false,
-        don: false
+        don: false, 
+        trangthai: false,
     }
 
     $scope.danhsach = [
@@ -20,7 +21,8 @@ window.SanPhamController = function ($scope, $routeParams) {
         $scope.inputValue = {
             sp: "",
             sl: "",
-            don: ""
+            don: "",
+            trangthai: "",
         }
 
         $scope.editId = 0;
@@ -43,11 +45,6 @@ window.SanPhamController = function ($scope, $routeParams) {
             $scope.kiemTraDuLieu.don = true; // có lỗi là true
             flag = true;
         }
-
-        // Trạng thái
-        for(let i = 0; i < $scope.danhsach.length; i++){
-            $scope.thongbao = $scope.trangthai;
-        }
         
         if (!flag) {
             // Xử lý sửa
@@ -59,6 +56,7 @@ window.SanPhamController = function ($scope, $routeParams) {
                         $scope.danhsach[i].sp = $scope.inputValue.sp;
                         $scope.danhsach[i].sl = $scope.inputValue.sl;
                         $scope.danhsach[i].don = $scope.inputValue.don;
+                        $scope.danhsach[i].trangthai = $scope.inputValue.trangthai;
                     }
                 }
                 $scope.onClose();
@@ -77,6 +75,7 @@ window.SanPhamController = function ($scope, $routeParams) {
                 sp: $scope.inputValue.sp,
                 sl: $scope.inputValue.sl,
                 don: $scope.inputValue.don,
+                trangthai: $scope.inputValue.trangthai,
             }
             $scope.danhsach.push(newItem);
             $scope.onClose();
@@ -91,12 +90,14 @@ window.SanPhamController = function ($scope, $routeParams) {
             sp: "",
             sl: "",
             don: "",
+            trangthai: "",
         }
         for (let i = 0; i < $scope.danhsach.length; i++) {
             if ($scope.danhsach[i].id == editId) {
                 editItem.sp = $scope.danhsach[i].sp;
                 editItem.sl = $scope.danhsach[i].sl;
                 editItem.don = $scope.danhsach[i].don;
+                editItem.trangthai = $scope.danhsach[i].trangthai;
             }
         }
 
@@ -104,7 +105,8 @@ window.SanPhamController = function ($scope, $routeParams) {
         $scope.inputValue = {
             sp: editItem.sp,
             sl: editItem.sl,
-            don: editItem.don
+            don: editItem.don,
+            trangthai: editItem.trangthai,
         }
     }
 

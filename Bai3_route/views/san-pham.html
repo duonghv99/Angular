@@ -19,7 +19,7 @@
 
     <div class="form-group">
         <label for="">Trạng Thái</label>
-        <select ng-model="trangthai" class="form-control">
+        <select ng-model="inputValue.trangthai" class="form-control">
             <option value="">Mời chọn</option>
             <option value="Kích hoạt">Kích hoạt</option>
             <option value="Chưa kích hoạt">Chưa kích hoạt</option>
@@ -43,7 +43,7 @@
             <td>{{ds.sp}}</td>
             <td>{{ds.sl}}</td>
             <td>{{ds.don}}</td>
-            <td>{{ thongbao }}</td>
+            <td>{{ds.trangthai}}</td>
             <td>{{ds.sl * ds.don}}</td>
             <td >
                 <button ng-click="onEdit(ds.id)" class="btn btn-info">Sửa</button>
