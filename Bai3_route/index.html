@@ -20,18 +20,22 @@
 
 <body>
     <div ng-app="app-route">
-        <nav>
-            <ul>
-                <li><a href="#!/trang-chu">Trang chủ</a></li>
-                <li><a href="#!/gioi-thieu/haha">Giới thiệu</a></li>
-                <li><a href="#!/san-pham">Sản Phẩm</a></li>
-                <li><a href="#!/nhan-vien">Nhân Viên</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg" style="background-color: #5ECAEE">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-link"><a class="nav-item" href="#!/trang-chu">Trang chủ</a></li>
+                        <li class="nav-link"><a class="nav-item" href="#!/gioi-thieu/haha">Giới thiệu</a></li>
+                        <li class="nav-link"><a class="nav-item" href="#!/san-pham">Sản Phẩm</a></li>
+                        <li class="nav-link"><a class="nav-item" href="#!/nhan-vien">Nhân Viên</a></li>
+                    </ul>
         </nav>
         <main>
             <!-- Định nghĩa mà nội dung sẽ render ra -->
             <div ng-view></div>
         </main>
+    </div>
+    </div>
     </div>
 
 </body>
